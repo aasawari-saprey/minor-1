@@ -1,0 +1,104 @@
+<body class="bgcolor">
+    <div id="mySidenav" class="sidenav">
+        <a href="/browse-food">Browse Foods</a>
+        <a href="/profile">Profile</a>
+        <a href="/login">LogOut</a>
+        
+
+
+    </div>
+
+    <h2 class="text-center">User Profile</h2>
+
+
+    <form class="form-container"  style="position:absolute;margin-left: 240px;">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="First name" aria-label="name" name="fname" [(ngModel)]="fname">
+                
+            </div>
+            <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" aria-label="email" name="email"[(ngModel)]="email">
+            </div>
+            <div class="col-md-4">
+                <label>Age</label>
+                <input type="number" class="form-control" placeholder="Age" aria-label="age" name="age" [(ngModel)]="age">
+            </div>
+            <div class="col-md-4">
+                <label>weight</label>
+                <input type="number" class="form-control" placeholder="weight(in kg)" aria-label="weight" name="weight" [(ngModel)]="weight">
+            </div>
+            <div class="col-md-4">
+                <label>Height</label>
+                <input type="number" step="0.01" class="form-control" placeholder="Height(in cm)" aria-label="height"  name="weight" [(ngModel)]="height">
+            </div>
+            <div class="col-md-4">
+                <label>Activity Level</label>
+                <select class="form-control" id="dropdown">
+                    <option disabled selected>Select an option</option>
+                    <option>Sedentary</option>
+                    <option>Lightly Active</option>
+                    <option>Moderately Active</option>
+                    <option>Highly Active</option>
+                    </select>
+            </div>
+
+
+            <div class="col-md-4">
+                <label>Daily Calorie Intake</label>
+                <select class="form-control" id="dropdown">
+                        <option disabled selected>Select an option</option>
+                        <option>Less than 1000</option>
+                      <option>1400-1600</option>
+                       <option>1800-2000</option>
+                      <option>2200-2600</option>
+                       <option>2800 or more</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label>BMI</label>
+                
+                <input type="number" class="form-control" placeholder="BMI" aria-label="BMI"  name="BMI" [(ngModel)]="BMI">
+                <button (click)="Calculate(weight , height)" style="margin-top:10px;">Calculate</button>
+             </div>
+             
+                
+               
+             
+            <div class="col-md-6">
+                <label>Gender</label>
+                <div class="form-group" *ngFor="let gender of Gender">
+
+                    <label>{{gender}}
+                            <input class="form-check-input form-check-inline" type="radio" name="gender" [value]="gender"  [(ngModel)]="value">
+                        </label>
+                    
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="comments">Are you food allergic?</label>
+                    <textarea class="input-textarea" id="comments" rows="2" style="width: 100% ;" placeholder="If yes,please list"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="comments">Medical History</label>
+                    <textarea class="input-textarea" id="comments" rows="2" style="width: 100% ;" placeholder="This is an optional field and only to be filled if you agree with our terms."></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="submit-btn btn btn-success" (click)="Submit()" style="width:40%">Submit</button>
+            </div>
+
+
+        </div>
+
+    </form>
+</body>
